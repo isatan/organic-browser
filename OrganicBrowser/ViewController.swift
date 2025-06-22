@@ -17,10 +17,10 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
 
         // UITextFieldのセットアップ
         urlTextField.delegate = self
-        urlTextField.placeholder = "Enter URL and press Return"
-        urlTextField.keyboardType = .URL
-        urlTextField.autocapitalizationType = .none
-        urlTextField.autocorrectionType = .no
+        // urlTextField.placeholder = "Enter URL and press Return" // Storyboardで設定済み
+        // urlTextField.keyboardType = .URL // Storyboardで設定済み
+        // urlTextField.autocapitalizationType = .none // Storyboardで設定済み
+        // urlTextField.autocorrectionType = .no // Storyboardで設定済み
 
         // ボタンの初期状態
         updateNavigationButtons()
