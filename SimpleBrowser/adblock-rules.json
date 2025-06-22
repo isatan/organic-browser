@@ -1,0 +1,65 @@
+[
+    {
+        "trigger": {
+            "url-filter": ".*doubleclick\\.net/.*",
+            "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": ".*googleadservices\\.com/.*",
+            "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": ".*googlesyndication\\.com/.*",
+            "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": ".*adservice\\.google\\.com/.*",
+            "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": ".*zedo\\.com/.*",
+            "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": ".*ads\\.pubmatic\\.com/.*",
+            "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": ".*analytics\\.yahoo\\.com/.*",
+             "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    }
+]
