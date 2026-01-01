@@ -27,7 +27,12 @@
 		D911735C2E08398700556468 /* organic-browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "organic-browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91173722E08398A00556468 /* organic-browserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "organic-browserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D911737C2E08398A00556468 /* organic-browserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "organic-browserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9ADBLOCKJSONREF01 /* adblock-rules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "adblock-rules.json"; path = "organic-browser/adblock-rules.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXBuildFile section */
+		D9ADBLOCKJSONBLD01 /* adblock-rules.json in Resources */ = {isa = PBXBuildFile; fileRef = D9ADBLOCKJSONREF01 /* adblock-rules.json */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		D91173842E08398A00556468 /* Exceptions for "organic-browser" folder in "organic-browser" target */ = {
@@ -225,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9ADBLOCKJSONBLD01 /* adblock-rules.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
