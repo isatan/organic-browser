@@ -77,10 +77,10 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     // MARK: - Helper Methods
     private func applyReadableContentScript(to webView: WKWebView) {
         let script = """
-            // Remove distracting elements
-            document.querySelectorAll('header, footer, nav, aside, form, figure, iframe, video, img, svg').forEach(el => el.remove());
+            // Remove structural elements that might still contain clutter
+            document.querySelectorAll('header, footer, nav, aside, form').forEach(el => el.remove());
 
-            // Remove all existing styles and scripts
+            // Remove any leftover inline styles or scripts for a clean slate
             document.querySelectorAll('style, script, link').forEach(el => el.remove());
 
             // Apply new styles for readability
@@ -101,9 +101,6 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
                 }
                 h1, h2, h3, h4, h5, h6 {
                     line-height: 1.2;
-                }
-                img, video, figure {
-                    display: none;
                 }
             `;
             document.head.appendChild(style);
