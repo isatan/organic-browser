@@ -17,6 +17,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
 
         // UITextFieldのセットアップ
         urlTextField.delegate = self
+        urlTextField.autocapitalizationType = .none // 自動大文字化を無効にする
         // urlTextField.placeholder = "Enter URL and press Return" // Storyboardで設定済み
         // urlTextField.keyboardType = .URL // Storyboardで設定済み
         // urlTextField.autocapitalizationType = .none // Storyboardで設定済み
@@ -45,6 +46,7 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     // MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         updateNavigationButtons()
+        applyReadableContentScript(to: webView)
         // ページタイトルをurlTextFieldに表示することも可能
         // urlTextField.text = webView.url?.absoluteString
     }
@@ -73,6 +75,42 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     }
 
     // MARK: - Helper Methods
+    private func applyReadableContentScript(to webView: WKWebView) {
+        let script = """
+            // Remove distracting elements
+            document.querySelectorAll('header, footer, nav, aside, form, figure, iframe, video, img, svg').forEach(el => el.remove());
+
+            // Remove all existing styles and scripts
+            document.querySelectorAll('style, script, link').forEach(el => el.remove());
+
+            // Apply new styles for readability
+            const style = document.createElement('style');
+            style.textContent = `
+                body {
+                    font-family: -apple-system, sans-serif;
+                    line-height: 1.6;
+                    font-size: 18px;
+                    max-width: 800px;
+                    margin: 0 auto;
+                    padding: 2rem;
+                    background-color: #ffffff;
+                    color: #212121;
+                }
+                a {
+                    color: #007aff;
+                }
+                h1, h2, h3, h4, h5, h6 {
+                    line-height: 1.2;
+                }
+                img, video, figure {
+                    display: none;
+                }
+            `;
+            document.head.appendChild(style);
+        """
+        webView.evaluateJavaScript(script, completionHandler: nil)
+    }
+
     private func updateNavigationButtons() {
         backButton.isEnabled = webView.canGoBack
         forwardButton.isEnabled = webView.canGoForward
