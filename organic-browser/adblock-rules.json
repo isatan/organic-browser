@@ -10,15 +10,6 @@
     },
     {
         "trigger": {
-            "url-filter": ".*",
-            "resource-type": ["image", "style-sheet", "script", "font", "media", "svg-document"]
-        },
-        "action": {
-            "type": "block"
-        }
-    },
-    {
-        "trigger": {
             "url-filter": ".*googleadservices\\.com/.*",
             "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
         },
@@ -66,6 +57,15 @@
         "trigger": {
             "url-filter": ".*analytics\\.yahoo\\.com/.*",
              "resource-type": ["script", "image", "style-sheet", "raw", "popup"]
+        },
+        "action": {
+            "type": "block"
+        }
+    },
+    {
+        "trigger": {
+            "url-filter": ".*",
+            "resource-type": ["image", "style-sheet", "script", "font", "media", "svg-document"]
         },
         "action": {
             "type": "block"
